@@ -1,0 +1,74 @@
+.wrapper{
+	margin: 0 auto;
+	width:680px; 
+	min-width: 350px;
+	border: 1px solid #888;
+	border-radius: 5px;
+	background-color: #ccc;
+}
+body{
+	font-family: arial;
+	color: #000;
+}
+form{
+	padding: 20px;
+	display: table;
+}
+.row{
+	display: table-row;
+}
+.column{
+	display: table-cell;
+}
+label{width: 50vw; margin: 15px 5px;}
+input{width: 50vw; max-width: 300px; margin: 5px;}
+input[type=submit]{
+	width: 150px; 
+	padding: 5px; 
+	font-weight: bold; 
+	font-size: 1.3em; 
+}
+input[type=submit]:hover{
+	background-color: #ffcc66;
+}
+input::-webkit-input-placeholder {
+	color: white !important;
+}
+select{width: 51vw; max-width: 305px; margin: 5px;}
+
+input:-moz-placeholder { /* Firefox 18- */
+	color: white !important;  
+}
+ 
+input::-moz-placeholder {  /* Firefox 19+ */
+	color: white !important;  
+}
+ 
+input:-ms-input-placeholder {  
+	color: white !important;  
+}
+@media (max-width: 700px){
+	.wrapper{
+		width: 70vw;
+	}
+	form,.row,.column{
+		display: block;
+	}
+
+	input::-webkit-input-placeholder {
+	color: #000 !important;
+	}
+	 
+	input:-moz-placeholder { /* Firefox 18- */
+	color: #000 !important;  
+	}
+	 
+	input::-moz-placeholder {  /* Firefox 19+ */
+	color: #000 !important;  
+	}
+	 
+	input:-ms-input-placeholder {  
+	color: #000 !important;  
+	}	
+	label{display: none;}
+}
