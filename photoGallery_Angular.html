@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="photoApp">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link  rel="stylesheet" href="css/photolist.css">
+
+	<script src="js/angular.js"></script>
+	<script src="js/photoApp.js"></script>
+</head>
+<body ng-controller="photoCtrl">
+	<!-- a resposive photo galery use HTML5, CSS3, and jQuery   -->
+<div class="wrapper">
+	<div id="player"><img id="playerImg" ng-src="{{firstphotoUrl}}"></div>
+	<div class="container">
+		<div class="row">
+			<div class="column" ng-repeat="photo in photoList | limitTo:3" ng-click="photoDisplay(photo)" >
+				<img ng-src="{{photo}}">
+			</div>
+		</div>
+		<div class="row">
+			<div class="column" ng-repeat="photo in photoList | limitTo:-3" ng-click="photoDisplay(photo)" >
+				<img ng-src="{{photo}}">
+			</div>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
