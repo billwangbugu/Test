@@ -263,12 +263,35 @@ footer .navbar-fixed-bottom li{
 	.icon{
 		display: block;
 	}
+	.main{
+	width: 100vw;
+	color: white;
+	margin:0;
+
+}
+/* home page */
+.homeContent{
+	width: 100vw;
+	text-align: center;
+	color: white;
+}
+.homeContent p{font-size: 1.5em;}
+.homeImg img{
+	width: 40vw;
+	min-width: 150px;
+	height: auto;
+	padding: 20px 0;
+}
+.homeContent h2{
+	font-size: 2em font-weight:bold;
+}
 	footer .navbar-fixed-bottom{
 		height: auto;
 		width:100vw;
+		margin-left: 3px;
 	}
 	footer .navbar-fixed-bottom li {
-		padding: 5px 0; display: inline-block;
+		padding: 0; display: inline-block;
 	}
 	footer .navbar-fixed-bottom li.btn-lg{
 		width: 25vw;
