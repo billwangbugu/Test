@@ -1,0 +1,277 @@
+html{   
+	height: 100%;
+  	box-sizing: border-box;
+  }
+
+body{
+	position: relative;
+	margin: 0;
+	font-family:sans-serif;
+	background: url("../images/main-bg.jpg") no-repeat;
+	height: 100%;
+	clear: both;
+	color: #fff;
+	font-size: 1em;
+}
+
+.container{
+	width: 980px;
+	margin:0 auto;
+	position: relative;
+}
+/* header navigation part */
+header {
+	width: 100%;
+	height: 80px;
+	background-image: url("../images/banner-bg-right.png");
+	background-position: right top;
+	background-repeat:no-repeat;
+	background-color:   #77a777;
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+header .logo{
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	display: block;
+	width: 53px;
+	height: 56px;
+}
+header nav{
+
+	overflow: hidden;
+	position: absolute;
+	top: 30px;
+	right: 10px;
+	vertical-align: baseline;
+}
+ .language{
+	position: absolute; 
+	width: 184px;
+	height: 64px;
+	right: 800px;
+	top: 40px;
+	background-color: red;
+	-webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    border-radius:4px;
+	border: 2px solid red;
+	margin-top: -8px;
+}
+.language select{
+	background-color: red;
+	color: white;
+	width: 180px;
+	height: 60px;
+	font-size: 2em;
+	border: 0;
+}
+.icon{
+	float: right;
+	position: absolute;
+	top: 10px;
+	right: 30px;
+	display: none;
+}
+.icon img{width: 150%; height: 150%}
+header nav ul{	
+	display: inline-block;
+	overflow: hidden;
+	float: right;
+	margin-right: 15px;
+	margin-top: 15px;
+}
+
+header nav ul li{
+	list-style-type: none;
+	float: left;	
+	font-size: 1.8em;
+}
+li.login::after, li.password::after, li.registration::after, li.features::after, li.reset::after{
+	content: "|"; 
+	padding-right: 20px; 
+	padding-left: 20px;}
+
+header nav ul li a{color: white; font-weight: bold; text-decoration: none;}
+
+/* main part */
+.main{
+	width: 100%;
+	color: white;
+	margin: 20px 20px -50px 20px;
+	min-height: 100%;
+	height: height: auto !important;
+}
+/* home page */
+.homeContent{
+	width: 50vw;
+	text-align: center;
+	color: white;
+}
+.homeContent p{font-size: 1.5em;}
+.homeImg img{
+	width: 40%;
+	height: auto;
+	padding: 20px;
+}
+.homeContent h2{
+	font-size: 2em font-weight:bold;
+}
+
+/* login */
+.loginPart{
+	width: 100vw;
+	margin: 20px auto;
+	text-align: center;
+	color: white;
+}
+
+input[type="email"], input[type="password"]{
+	margin: 10px; 
+	width: 24vw; 
+	min-width: 200px;
+	height: 50px;
+	font-size: 2em;
+	color: black
+}
+input.fail{
+	background: url("../images/cross.png") right no-repeat;
+	background-color: white;
+}
+input.pass{
+	background: url("../images/check.png") right no-repeat;
+	background-color: white;
+}
+.btn-submit{
+	width: 24vw; 
+	min-width: 200px;
+	height: 50px;
+	margin-bottom: 15px;
+}
+.fail{color: red; font-size: 3em; }
+.checkmark{color: green; font-size: 3em;}
+/* details page */
+#articleView{width: 100%;text-align: center;}
+
+.subtitle{color: white;text-align: center;width: 100%; font-size: 2em;}
+.articleContainer{
+	width: 90%; 
+	overflow-y:auto; 
+	height: 55vh!important; 
+	border: 0; 
+
+	}
+.articleList{
+	display: inline-block; 
+	border: 1px solid #ccc; 
+	border-radius: 3px; 
+	width:90vw;
+}
+.articleImg {
+	width: 150px; 
+	float: left; 
+	text-align: left; 
+	padding:15px;
+}
+.articleTitle{width:70%; float: left; text-align: left; padding-top: 15px; font-size: 2em; }
+.articleList{width: 90%; border-radius: 3px; background:transparent; height: 60px; border: 1px #295774 solid; margin: 10px;}
+.articleList span{margin:5px 15px;} 
+.articleList span .img-rounded{margin-top: 10px;}
+.detailContainer{border: 1px #295774 solid; border-radius: 3px; 
+	background:transparent; padding: 10px; width: 90%; margin: 0 auto;}
+.detailImg{height: 55vh!important;overflow: hidden;}
+.detailImg img{width: auto; height: auto; max-width: 100%; max-height: 100%;}
+#detailTable{width:100%; font-size: 1.5em;}
+td.dd {width: 35%;}
+ul.detailBtn {float: right; margin-right: 100px; margin-top: 15px;}
+ul.detailBtn li{list-style-type: none;display: inline-block;}
+
+/* footer nav */
+footer .navbar-fixed-bottom{
+	background: url(../images/footer-bg.png) repeat-x;
+	padding-bottom: 5px;
+	padding-right: 20px; 
+}
+footer .navbar-fixed-bottom li{
+	padding:0 10px; 
+}
+/* modal part */
+.modal-content{
+	padding: 30px;
+}
+.modal-header{
+	height: 150px;
+	background: url("../images/angular-icon-2.png") no-repeat left top;
+}
+.modal-header h4{
+	margin-left: 150px;
+}
+.logoutModal{
+	height: 300px;
+	background: url("../images/logout.png") no-repeat left top;
+}
+}
+.confirm{
+	height: 300px;
+	background: url("../images/confirm-icon.png") no-repeat left top;
+}
+.help{
+	height: 300px;
+	background: url("../images/help.png") no-repeat left top;
+}
+.contact{
+	height: 300px;
+	background: url("../images/contact-me.png") no-repeat left top;
+}
+.confirm p, .contact p, .help p{
+	margin-left: 200px;
+}
+
+.modal-title, .modal-body{
+	color: black;
+	font-size: 2em;
+}
+
+
+@media (max-width:770px){
+	header{width: 100%;}
+	header nav{	
+		width: 260px;
+		float: none;
+		background: #fff;
+		position: absolute;
+		margin-top: 65px;
+		right: -40px;
+		display: none;
+	}
+	header nav.show{display: block;}
+	header nav ul{
+		width: 80%;
+	}
+	header nav ul li{		
+		width: 150px;
+		text-align: left;
+		line-height: 2;
+		font-size: 1.5em;
+	}
+	header nav ul li a{
+		color: black;
+	}
+	.icon{
+		display: block;
+	}
+	footer .navbar-fixed-bottom{
+		height: auto;
+		width:100vw;
+	}
+	footer .navbar-fixed-bottom li {
+		padding: 5px 0; display: inline-block;
+	}
+	footer .navbar-fixed-bottom li.btn-lg{
+		width: 25vw;
+		font-size: 1.2em;
+	}
+}
