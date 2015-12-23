@@ -1,0 +1,8 @@
+[
+	{'curId':'CAD','displayName':'Canadian Dollar (CAD)'},
+	{'curId':'USD','displayName':'U.S.A. Dollar (USD)'},
+	{'curId':'GBP','displayName':'Great Britain (GBP)'},
+	{'curId':'JPY','displayName':'Japanese Yan (JPY)'},
+	{'curId':'CNY','displayName':'Chinese Yan (CNY)'},
+	{'curId':'HKD','displayName':'Hongkong Dollar (HKD)'}
+]

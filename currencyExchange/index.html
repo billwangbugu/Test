@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html ng-app="exApp">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>currency exchange</title>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	<script src="scripts/angular.js"></script>
+	<script src="scripts/exchangeApp.js"></script>
+</head>
+<body ng-controller="exCtrl">
+	<div class="container">
+		<h2>Currency Exchange</h2>
+		<form class="form-horizontal" role="form">
+			<div class="form-group">
+				<label class="control-label col-sm-1" for="amount">Amount:</label>
+				<div class="col-sm-4">
+					<input type="number" class="form-control" id="amount" ng-model="amount">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-1" for="fromCur">From:</label>
+				<div class="col-sm-4">
+					<select name="fromCur" id="fromCur" class="form-control" ng-model="fromId" ng-options="currencyId.curId as currencyId.displayName for currencyId in currencyIds" ng-change="setBase(fromId)" >			
+					</select>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-1" for="to">To:</label>
+				<div class="col-sm-4">
+					<select name="toCur" id="toCur" class="form-control" ng-model="toId" ng-options="currencyId.curId as currencyId.displayName for currencyId in currencyIds" >	
+				</select>
+			</div>
+			</div>
+			<div class="form-group">
+			<h4>{{amount | currency}} {{fromId}}  exchange to {{(fromId==toId)?1*amount : exchangeRates[toId] * amount | currency}}  {{toId}}</h4>
+			</div>
+		</form>
+	</div>
+	
+
+
+</body>
+</html>
