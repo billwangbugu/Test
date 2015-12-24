@@ -1,0 +1,32 @@
+<html ng-app="weatherApp">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="angular.js"></script>
+	<script src="weatherApp.js"></script>
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</head>
+<body  ng-controller="weatherCtrl">
+	<div class="container">
+		<div ng-repeat="city in cities | filter: {id:cityId}">
+			<h4 class="col-sm-3">{{city.cityProvince}}</h4>
+			<div class="col-sm-1">{{dateValue }}</div>
+		</div>
+	</div>
+	<div class="container">
+		<label class="control-label col-sm-2" for="fromCur">change city:</label>
+		<div class="col-sm-2">
+			<select name="city" ng-model="city" ng-options="city.id as city.cityProvince for city in cities" ng-change="cityWeather(city)">
+			</select>
+		</div>	
+	</div>	
+	<div class="container">
+		<div class="col-sm-4">
+		{{description}}
+		<img ng-src="http://static.ctvnews.ca/bellmedia/cp24/img/newWeather/{{icon}}.png"/>
+		{{temperature}}&#176;C
+		</div>
+	</div>
+</body>
+</html>
