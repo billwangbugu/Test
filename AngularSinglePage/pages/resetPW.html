@@ -1,17 +1,17 @@
 <div class="loginPart">
 	<div><img src="images/sample.png" class="img-rounded" ></div>
-	<form ng-controller="validateCtrl" name="myForm" novalidate>
+	<form ng-controller="validateCtrl" class="css-form" name="myForm" novalidate>
 		
 		<div class="formField" id="oldpwField">
-			<input type="password" name="password" ng-class="{'fail':password!=myPassword, 'pass': password==myPassword, '': password}" placeholder="Enter current password" ng-model="password" required>
+			<input type="password" name="password" placeholder="Enter current password" ng-model="password" required>
 			
 		</div>
 		<div class="formField" id="newpwField">
-			<input type="password" name="newPW" placeholder="New password" ng-model="newPW" ng-class="{'fail':newPW.length<4, 'pass':newPW.length>=4}" required>
+			<input type="password" name="newPW" placeholder="New password" ng-model="newPW" required>
 				
 		</div>
 		<div class="formField" id="newpwField2">
-			<input type="password" name="newPW2" placeholder="Retype password" ng-model="newPW2" ng-class="{'fail':newPW != newPW2, 'pass':newPW==newPW2 && newPW2}" required>
+			<input type="password" name="newPW2" placeholder="Retype password" ng-model="newPW2"  required>
 		</div>
 		<div  class="fieldSub">
 			<button type="button" class="btn btn-info btn-lg btn-submit" ng-disabled="password!=myPassword && newPW.length<4 && newPW != newPW2"  data-toggle="modal" data-target="#resetPW" >Submit</button>

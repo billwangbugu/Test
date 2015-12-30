@@ -69,7 +69,7 @@ myApp.controller("mainCtrl",function($scope){
 });
 
 myApp.controller("validateCtrl",['$scope','$location', function($scope,$location){
-    $scope.email="enter email";
+    $scope.email="";
     $scope.password="";
     $scope.myPassword="1234";
     

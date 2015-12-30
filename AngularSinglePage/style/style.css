@@ -137,11 +137,11 @@ input[type="email"], input[type="password"]{
 	font-size: 2em;
 	color: black
 }
-input.fail{
+.css-form input.ng-invalid.ng-touched {
 	background: url("../images/cross.png") right no-repeat;
 	background-color: white;
 }
-input.pass{
+.css-form input.ng-valid.ng-touched{
 	background: url("../images/check.png") right no-repeat;
 	background-color: white;
 }
