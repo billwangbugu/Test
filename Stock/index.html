@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html ng-app="myApp">
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script src="script/myApp.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body ng-controller="myCtrl">
+
+<h2>{{stock.Name}} ({{stock.symbol}})</h2>
+
+<div ng-class="(stock.Change<0)? 'red':(stock.Change>0)?'green':'black'">
+{{stock.LastTradePriceOnly | currency}}<span>{{stock.Change | number:2}}</span>
+</div>
+
+<hr>
+<div>
+	<ul>
+		<li>
+			<div class="title">Day's Range: </div>	
+			<div class="value">{{stock.DaysLow }} - {{stock.DaysHigh }} </div>
+		</li>
+		<li>
+			<div class="title">Year Range: </div>	
+			<div class="value">{{stock.YearLow }} - {{stock.YearHigh }}</div>
+		</li>
+		<li>
+			<div class="title">Volume: </div>	
+			<div class="value">{{stock.Volume}}</div>
+		</li>
+		<li>
+			<div class="title">Market Cap:</div>	
+			<div class="value">{{stock.MarketCapitalization }}</div>
+		</li>
+	</ul>
+</div>
+<hr>
+<div>
+	<input name="symbol" type="text" ng-model="symbol" placeholder="Enter Symbol">
+	<button ng-click="getData()">Look Up</button>
+</div>
+</body>
+</html>

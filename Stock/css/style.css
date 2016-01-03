@@ -1,0 +1,56 @@
+body{
+	font-family: sans-serif;
+	font-size: 1.2em;
+
+}
+ul{display: table;}
+li{
+	list-style-type: none;	
+	line-height: 2em;
+	display: table-row;
+}
+.title{
+	width: 200px!;
+	text-align: left;
+	display: table-cell;
+}
+
+.value{
+	width: 240px;
+	display: table-cell;
+	text-align: right;
+}
+.red{
+	color:red; 
+	font-size: 1.6em;
+	width: 400px;
+}
+.red span{	
+	margin-left: 20px;
+	background-image: url("../img/down_red.gif");
+	background-repeat: no-repeat;
+	background-position: bottom left;
+	padding-left: 30px;
+	}
+.green{
+	color:green;
+	font-size: 1.6em;
+	width: 400px;
+}
+.green span{	
+	margin-left: 20px;
+	padding-left: 30px;
+	background-image: url("../img/up.gif");
+	background-repeat: no-repeat;
+	background-position: top left;
+}
+.black{
+	color:black;
+	font-size: 1.6em;
+	width: 400px;
+}
+.black span{	
+	margin-left: 80px;
+	padding-left: 30px;
+}
+input, button{font-size: 1.2em}
