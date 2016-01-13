@@ -39,25 +39,3 @@ describe('Testing myCtrl that uses a Promise', function () {
   });
 
 });
-/*
-describe('myService', function(){
-	var myServ, url;
-	var $httpBackend;
-
-	beforeEach(module("exApp"));
-
-	beforeEach(inject(function($injector){
-
-		$httpBackend=$injector.get('$httpBackend');
-		url="https://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.quote where symbol =\"YHOO\"&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=JSON_CALLBACK"
-		$httpBackend.when('JSONP',url).respond({});
-	}));
-
-	it('should get feed',function(){
-		
-		$httpBackend.expectGET('https://query.yahooapis.com/v1/public/yql?q=select * from yahoo.finance.quote where symbol =\"YHOO\"&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=JSON_CALLBACK');
-		$httpBackend.flush();
-	})
-
-
-});*/
