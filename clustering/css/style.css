@@ -1,0 +1,147 @@
+.table{
+	width: 80%;
+	max-width: 1000px;
+	margin: 20px 0
+}
+td, th{
+	border: 1px solid #ccc;
+	margin: 0;
+	text-align: center;
+	padding: 12px 0!important;
+}
+td a{
+	color: white;
+	font-size: 1.4em;
+}
+
+/* tab */
+.Clustered{
+	background-color: #33ccff;
+	font-weight: bolder;
+}
+.noClustered{
+	background-color: #999966;
+	font-weight: bolder;
+}
+.CombinA{
+	border-top:5px solid #003366;
+}
+.CombinB{
+	border-top: 5px solid #990000;
+}
+/* CombinC is prepare for othe clustered group */
+.CombinC{
+	border-top: 5px solid #006600;
+}
+.CombinC-left{
+	border-left: 5px solid #006600;
+}
+.CombinA-left{
+	border-left:5px solid #003366;
+}
+.CombinB-left{
+	border-left: 5px solid #990000;
+}
+.noCl{
+	border-top:5px solid #999966;
+}
+.blank{
+	background: repeating-linear-gradient(
+		  135deg,
+		  #fff,
+		  #ddd 1px,
+		  #fff 5px
+		);
+}
+/* scores */
+.ThreePass,.ThreePass select, .ThreePass select option{
+	background-color: #006600;
+	color: #fff;
+}
+
+.TwoPass, .TwoPass select, .TwoPass select option{
+	background-color: #0066CC;
+	color: #fff;
+}
+
+.OnePass, .OnePass select, .OnePass select option{
+	background-color: #ff6600;
+	color: #fff;
+}
+.nonePass, .nonePass select, .nonePass select option{
+	background-color: #990000;
+	color: #fff;
+}
+.ThreePass select,.TwoPass select,.OnePass select,.nonePass select{
+	border:0;
+}
+
+.comments li{
+	color: #000000;
+}
+
+/*Legend*/
+.legendDiv{
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	-webkit-border-radius:10px;
+	-moz-border-radius: 10px;
+	width: 80%;
+	padding-left: 10px;
+}
+.legendDiv ul li{
+	display: inline-block;
+	padding-right: 20px;
+}
+.ThreePassLegend, .TwoPassLegend,.OnePassLegend,.nonePassLegend,.noClLegend, .ClusteredLegend, .ClusteredALegend, .ClusteredBLegend, .ClusteredCLegend{
+	width: 20px;
+	height: 15px;
+	padding: 0 5px;
+	margin-right: 5px;
+}
+.ThreePassLegend{
+	background-color: #006600;
+	color:#006600;
+}
+.TwoPassLegend{
+	background-color: #0066CC;
+	color:#0066CC;
+}
+.OnePassLegend{
+	background-color: #ff6600;
+	color:#ff6600;
+}
+.nonePassLegend{
+	background-color: #990000;
+	color:#990000;
+}
+.noClLegend{
+	background-color: #999966;
+	color:#999966;
+}
+.ClusteredLegend{
+	background-color: #33ccff;
+	color:#33ccff;
+}
+.ClusteredALegend{
+	background-color: #33ccff;
+	border-left:5px solid #003366;
+	color:#33ccff;
+	width: 15px;
+}
+.ClusteredBLegend{
+	background-color: #33ccff;
+	border-left:5px solid #990000;
+	color:#33ccff;
+	width: 15px;
+}
+.ClusteredCLegend{
+	background-color: #33ccff;
+	border-left:5px solid #006600;
+	color:#33ccff;
+	width: 15px;
+}
+
+.myChart{
+	width:80%;
+}

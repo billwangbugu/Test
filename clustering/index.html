@@ -1,0 +1,102 @@
+<!DocType html>
+<html ng-app="riskApp">
+<head>
+	<title>RBC risk control</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.css">
+  	<script src="scripts/jquery.min.js"></script>
+  	<script src="scripts/bootstrap.min.js"></script>
+  	<script src="scripts/highcharts.js"></script>
+  	<script src="scripts/exporting.js"></script>
+  	<script src="scripts/angular.js"></script>
+  	<script src="scripts/myApp.js"></script>
+  	<link rel="stylesheet" type="text/css" href="css/style.css" />
+</head>
+<body>
+	<div class="container" ng-controller="riskCtrl">
+		<h1>Operational Risk AMA</h1> 
+		<button ng-click="showChart=!showChart">{{showChart?"Table":"Chart"}}</button>
+		<div id="myChart" class="myChart"  ng-show="showChart">Placeholder for chart</div>
+		<div  ng-hide="showChart">
+		<table class="table table-bordered">
+			<tr >
+				<th></th>
+				<th ng-repeat="set in sets" id="set{{set.setId}}" class="{{set.clustered}}" ng-class="{'noClustered': set.clustered=='noCl', 'Clustered':set.clustered!='noCl'}">
+					<div class="{{set.clustered}}">Data Set {{set.setId}}</div></th>
+				<th class="addSet" ng-click="addDataSet(sets.length)"><button type="button" class="btn btn-info btn-xs">Add Data Set</button></th>
+			</tr>
+			<tr ng-repeat="set in sets">
+				<td ng-class="{'noClustered': set.clustered=='noCl', 'Clustered':set.clustered!='noCl'}"><div class="{{set.clustered}}-left">Data Set {{set.setId}}</div></td>
+				<td ng-repeat="score in set.scores" id="{{score.cell}}" ng-class="{'ThreePass':score.value>0.67,'TwoPass':(score.value<=0.67&&score.value>0.33),'OnePass':(score.value<=0.33&&score.value>0),'nonePass':score.value==0}" >					
+				  <a ng-click="passParam(score.value, score.cell)" data-toggle="modal" data-target="#updateCell">{{score.value==0? "-":(score.value | number:2)}}</a>
+				 
+				</td>
+				<td class="blank"></td>
+			</tr>			
+			<tr>
+				<td>BL10</td>
+				<td ng-repeat="set in sets" class="blank"></td>
+				<td></td>
+			</tr>
+		</table>
+		<div class="legendDiv">
+			<h4>Legend</h4>
+			<ul>
+				<li><span class="ThreePassLegend">-</span><span>Three Pass (> 0.67)</span></li>
+				<li><span class="TwoPassLegend">-</span><span>Two Pass (0.34 - 0.67)</span></li>
+				<li><span class="OnePassLegend">-</span><span>One Pass (<= 0.33) </span></li>
+				<li><span class="nonePassLegend">-</span><span>None Pass (0 show as -)</span></li>
+			</ul>
+			<ul>
+				<li><span class="noClLegend">-</span><span>Not Clustered</span></li>
+				<li><span class="ClusteredLegend">-</span><span>Clustered</span></li>
+				<li><span class="ClusteredALegend">-</span><span class="ClusteredBLegend">-</span><span class="ClusteredCLegend">-</span><span>Clustered Group</span></li>
+			</ul>
+		</div>
+		</div>
+		
+
+		<div class="comments" ng-show="updateNotes.length != 0"><h4>Update Notes</h4> 
+			<div ng-repeat="updateNote in updateNotes">{{ updateNote }}</div>
+		</div>
+		
+
+  <div class="modal fade" id="updateCell" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Update Score</h4>
+        </div>
+        <div class="modal-body">    
+			<div class="form-group">
+				<label for="newScore">New score</label>
+				<input type="number" name="newScore" ng-model="newScore" required>
+				(please enter new number between 0 to 1)
+			<!-- If the changes limited in 1, 0.67, 0.33, and 0, then use the select
+			<select id="{{score.cell}}_update" name="newScore" ng-model="newScore" >
+					<option value="1">1.00</option>
+					<option value="0.67">0.67</option>
+					<option value="0.33">0.33</option>
+					<option value="0">0</option>
+				  </select> 
+			-->
+
+			</div>
+			<div class="form-group">
+				<label for="reason">Reason for justification</label>
+				<input name="reason" class="form-control" type="text" ng-model="reason" required>
+			</div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="updateScore(selectCellValue,cellId)" ng-disabled="reason===''|| reason === undefined || newScore>1 || newScore<0">OK</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</body>
+</html>
